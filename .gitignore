@@ -1,2 +1,6 @@
 .idea/
 resvg-coil.iml
+.gradle
+gradle/wrapper/
+.kotlin
+/build/
