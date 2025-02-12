@@ -39,29 +39,9 @@ kotlin {
         browser()
     }
 
-    applyDefaultHierarchyTemplate()
-
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.ui)
-            implementation(libs.androidx.annotation)
-        }
-        val skikoMain by creating {
-            dependsOn(commonMain.get())
-        }
-        jvmMain {
-            dependsOn(skikoMain)
-        }
-        appleMain {
-            dependsOn(skikoMain)
-        }
-        jsMain {
-            dependsOn(skikoMain)
-        }
-        wasmJsMain {
-            dependsOn(skikoMain)
+
         }
     }
 }
@@ -97,7 +77,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.adamglin",
         artifactId = "resvg",
-        version = "2.0.1"
+        version = "1.0.0-dev01"
     )
     pom {
         name.set("resvg")
@@ -117,11 +97,11 @@ mavenPublishing {
         }
         issueManagement {
             system.set("Github")
-            url.set("https://github.com/adamglin0/compose-shadow/issues")
+            url.set("https://github.com/adamglin0/resvg-kt/issues")
         }
         scm {
-            connection.set("https://github.com/adamglin0/resvg.git")
-            url.set("https://github.com/adamglin0/resvg")
+            connection.set("https://github.com/adamglin0/resvg-kt.git")
+            url.set("https://github.com/adamglin0/resvg-kt")
         }
     }
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
